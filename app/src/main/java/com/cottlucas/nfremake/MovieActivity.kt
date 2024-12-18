@@ -34,14 +34,10 @@ class MovieActivity : AppCompatActivity() {
         val rv: RecyclerView = findViewById(R.id.movie_rv_similar)
 
         txtTitle.text = "BATIMAN SAFADU"
-        txtDesc.text = " maio varias vezesmaio varias vezesmaio varias vezesmaio varias vezesmaio varias vezesmaio varias vezesmaio varias vezesmaio varias vezesmaio varias vezesmaio varias vezesmaio varias vezesmaio varias vezesmaio varias vezes"
+        txtDesc.text = " maio varias vo varias vezesmaio varias vezesmaio variaaio varias vezesmaio varias vezesmaio varias vezes"
         txtCast.text = getString(R.string.cast, "mel maia, atirei o pau no gato e tudo mais")
 
         val movies = mutableListOf<Movie>()
-        for (i in 0..50) {
-            val movie = Movie(R.drawable.movie)
-            movies.add(movie)
-        }
 
         val adapter = MovieAdapter(movies,R.layout.movie_item_similar)
         rv.layoutManager = GridLayoutManager(this,3)
