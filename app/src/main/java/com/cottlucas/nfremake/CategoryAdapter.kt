@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cottlucas.nfremake.model.Category
 import com.cottlucas.nfremake.model.Movie
 
-class CategoryAdapter(private val categories: List<Category>) :
+class CategoryAdapter(private val categories: List<Category>, private val onItemClickListener: (Int) -> Unit) :
     RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val view =
@@ -34,7 +34,7 @@ class CategoryAdapter(private val categories: List<Category>) :
 
             val rvCategory: RecyclerView = itemView.findViewById(R.id.rv_category)
             rvCategory.layoutManager = LinearLayoutManager(itemView.context, RecyclerView.HORIZONTAL, false)
-            rvCategory.adapter = MovieAdapter(category.movies, R.layout.movie_item)
+            rvCategory.adapter = MovieAdapter(category.movies, R.layout.movie_item, onItemClickListener)
         }
     }
 }
